@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>training</title>
+    <link rel="stylesheet" href="./css/20220325.css">
+</head>
+<body>
+    <main class="flex-cc">
+        <section id="circle" class="flex-cc">
+            <div id="box" class="pos-rele flex">
+                <div class="pos-abso"></div>
+                <div class=""></div>
+            </div>
+        </section>
+        <section id="text" class="flex">
+            <div id="box">
+                <h1>main title</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, omnis eaque. Quae, distinctio. Odio minima officiis in ullam maxime reprehenderit ratione! Quisquam blanditiis dolor odit autem quam suscipit est facere.</p>
+                <div id="hash-box" class="flex">
+                    <div class="hash">hash</div>
+                    <div class="hash">hash</div>
+                    <div class="hash">hash</div>
+                    <div class="hash">hash</div>
+                    <div id="hash">hash</div>
+                    <div id="hush">hush</div>
+                    <div id="hesh">hesh</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        let Click_hash = document.getElementById("hash");
+        let hush = document.getElementById("hush");
+        let hesh = document.getElementById("hesh");
+        let eash = document.querySelectorAll("div.hash");
+        let r = parseInt(Math.random()*255);
+        let g = parseInt(Math.random()*255);
+        let b = parseInt(Math.random()*255);
+        
+        Click_hash.addEventListener("click", event => {
+            Click_hash.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+            console.log("h");
+        });
+        hush.addEventListener("mouseover", event => {
+            console.log("hey");
+            hush.style.backgroundColor = "rgb(" + r  + "," + g + "," + b + ")";
+        });
+        hesh.addEventListener("mouseenter", event => {
+            hesh.style.backgroundColor = "rgb(" + r  + "," + g + "," + b + ")";
+            console.log("hi");
+        });
+        [].forEach.call(eash,function(eash){
+            eash.addEventListener("click", event => {
+                console.log("heng");
+                eash.style.backgroundColor = "rgb(" + r  + "," + g + "," + b + ")";
+            });
+        });
+//        [].forEach.call(pe_a,function(pe_a){
+//            pe_a.addEventListener("click", event => {
+//                event.target.style.backgroundColor = "red";
+//                if(event.target.style.backgroundColor == "red"){
+//                    pe_a.addEventListener("click", event => {
+//                        event.target.style.backgroundColor = "blue";
+//                    })
+//                }
+//            });
+//        });
+    </script>
+</body>
+</html>
