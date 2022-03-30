@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout-training-7</title>
+    <link rel="stylesheet" href="./css/20220330.css">
+</head>
+<body>
+    <main class="flex-ac">
+        <section class="flex-cc">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur beatae facere consectetur iusto, fugit similique sed! Consequuntur perspiciatis eum dolorum rem voluptatum asperiores in reprehenderit, iusto distinctio nam minima cupiditate!</p>
+        </section>
+        <section class="flex-cc">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores corrupti doloribus maiores! Saepe ipsam obcaecati molestias sed est, libero distinctio tempora pariatur asperiores nesciunt laudantium, fuga, laborum blanditiis. Porro, numquam!</p>
+        </section>
+        <section class="flex-cc">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, cum? Sunt ut pariatur repellat, vitae, aliquid reiciendis excepturi dignissimos voluptate, officia enim dolores eos qui repellendus? Ipsa, laborum. Sunt, ad?</p>
+        </section>
+        <section class="flex-cc">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, commodi optio est a suscipit officia. Asperiores ea dignissimos repudiandae eos quidem, laborum odit inventore ratione veritatis iusto quos corrupti cupiditate.</p>
+        </section>
+    </main>
+
+    <script>
+        let Color333 = document.querySelectorAll('section');
+
+        // i를 인덱스 값으로 지정
+        for(let i = 0; i < Color333.length; i++){
+            // 마우스가 들어갈때
+            Color333[i].addEventListener('mouseover', event => {
+                // console.log("he");
+                Color333[i].style.color = "#333";
+                Color333[i].style.backgroundColor = "darkturquoise";
+            });
+            // 마우스가 나갔을때
+            Color333[i].addEventListener('mouseout', event => {
+                // console.log("ha");
+                Color333[i].style.color = "#fff";
+                Color333[i].style.backgroundColor = "turquoise";
+            });
+
+        }
+    </script>
+</body>
+</html>
