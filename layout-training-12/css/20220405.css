@@ -1,8 +1,28 @@
 *{
     margin: 0;
     padding: 0;
+    color: #747474;
 }
-
+.pos-rel{
+    position: relative;
+}
+.pos-abso{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.flex-bc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-e{
+    display: flex;
+    justify-content: flex-end;
+}
+.margin-0-auto{
+    margin: 0 auto;
+}
 main{
     width: 428px;
     height: 869px;
@@ -10,17 +30,11 @@ main{
 }
 main >div{
     width: 95%;
-    margin: 0 auto;
 }
 
 #top{
     height: 100px;
-    margin: 0 auto;
-    color: #747474;
-
-    display: flex;
     flex-direction: column;
-    justify-content: flex-end;
 }
 #top p {
     line-height: 15px;
@@ -35,17 +49,12 @@ main >div{
 
 #mid{
     height: 350px;
-    border: 1px solid;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 #mid #txt-box{
     width: 100%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 #mid #txt-box h4{
     line-height: 25px;
@@ -69,11 +78,63 @@ main >div{
     background-color: #c4c4c4;
     border-radius: 5px;
 }
+#mid #arrow-box{
+    width: 100%;
+    margin-top: 40px;
+}
+#mid #arrow-box #circle-box{
+    width: 120px;
+    height: 120px;
+    background-color: #c4c4c4;
+    border-radius: 50%;
+}
+#mid #arrow-box #circle-box #circle{
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background-color: #747474;
 
-
+    top: 50% !important;
+    transform: translateY(-50%);
+    right: 0 !important;
+    left: inherit;
+    margin: 0 10px;
+}
+#mid #arrow-box p{
+    width: 110px;
+    padding: 10px;
+    line-height: 100px;
+}
 
 
 #bottom{
-    height: 400px;
-    border: 1px solid red;
+    border-radius: 24px;
+    padding: 40px 0;
+}
+#bottom h1{
+    padding: 10px;
+    text-align: end;
+    color: #b0b0b0;
+}
+#bottom p{
+    padding: 10px;
+    color: #8a8a8a;
+}
+#bottom #btn-box{
+    width: 100px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #c4c4c4;
+    line-height: 30px;
+    text-align: center;
+    color: #fdfdfd;
+    margin: 10px;
+}
+#bottom #bgc-box{
+    width: 100%;
+    height: 100%;
+    background-color: #747474;
+    opacity: 0.3;
+    border-radius: 24px;
+    z-index: -10;
 }
