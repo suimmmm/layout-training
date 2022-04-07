@@ -1,0 +1,44 @@
+#right{
+    width: 80%;
+    height: 90%;
+}
+#list-box{
+    width: 90%;
+    height: 300px;
+    background-color: #fdfdfd;
+    margin-top: 20px;
+}
+#list-box:nth-child(1){
+    margin-top: 0;
+}
+#list-box #title-box{
+    width: 95%;
+    margin: 0 auto;
+    border-bottom: 2px solid dodgerblue;
+}
+#list-box #title-box h1{
+    color: dodgerblue;
+    line-height: 50px;
+    padding: 0 5px;
+}
+#list-box #txt-box{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    max-height: 400px;
+}
+#list-box #txt-box p{
+    color: #000;
+}
+
+#addBtn{
+    width: fit-content;
+    height: fit-content;
+    margin: 20px auto;
+    border: 5px solid #fff;
+    border-radius: 30px;
+}
+#addBtn i{
+    color: #fff;
+    padding: 10px;
+}
