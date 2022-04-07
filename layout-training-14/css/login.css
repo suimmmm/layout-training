@@ -1,0 +1,8 @@
+#box{
+    height: 80%;
+    transform: translateY(10%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
