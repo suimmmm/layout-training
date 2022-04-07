@@ -1,0 +1,19 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logo-box{
+    width: 300px;
+    height: 100px;
+}
+#logo-box a{
+    height: 100px;
+    width: 300px;
+    text-align: center;
+    display: block;
+    line-height: 100px;
+    font-size: 5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #dddfff;
+}
