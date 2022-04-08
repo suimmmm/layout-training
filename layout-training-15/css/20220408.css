@@ -4,6 +4,7 @@ div{
     justify-content: center;
     align-items: center;
     border: 1px solid;
+    flex-wrap: wrap;
 }
 #root{
     width: 100vw;
@@ -16,7 +17,6 @@ div{
 }
 #root > div{
     background-color: #707070;
-    flex-direction: column;
 }
 #root > div > div{
     width: 95%;
