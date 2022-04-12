@@ -72,6 +72,11 @@ main p {
   width: 70%;
 }
 
+body #pos-abso-1 {
+  width: 100px;
+  height: 100px;
+}
+
 sub {
   display: -webkit-box;
   display: -ms-flexbox;

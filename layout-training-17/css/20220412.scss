@@ -45,6 +45,14 @@ main{
         width: 70%;
     }
 }
+body{
+    #pos-abso-1{
+        width: 100px;
+        height: 100px;
+    }
+    #pos-abso-2{}
+}
+
 sub{
     display: flex;
     justify-content: center;
