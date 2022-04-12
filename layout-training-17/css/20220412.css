@@ -55,6 +55,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   height: 90vh;
+  position: relative;
 }
 
 main h1 {
@@ -72,9 +73,27 @@ main p {
   width: 70%;
 }
 
-body #pos-abso-1 {
-  width: 100px;
-  height: 100px;
+#pos-abso-1 {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #c4c4c4;
+  position: absolute;
+  top: 50%;
+  left: -10%;
+}
+
+#pos-abso-2 {
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background-color: #c4c4c4;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 0;
+  z-index: -1;
 }
 
 sub {
