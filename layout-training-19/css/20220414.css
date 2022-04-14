@@ -3,6 +3,126 @@
   padding: 0;
 }
 
+@-webkit-keyframes moving {
+  0% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0.7;
+  }
+  66% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes moving {
+  0% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0.7;
+  }
+  66% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+@-webkit-keyframes moving-a {
+  0% {
+    opacity: 0.1;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes moving-a {
+  0% {
+    opacity: 0.1;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@-webkit-keyframes moving-b {
+  0% {
+    opacity: 0.4;
+  }
+  33% {
+    opacity: 0.1;
+  }
+  66% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes moving-b {
+  0% {
+    opacity: 0.4;
+  }
+  33% {
+    opacity: 0.1;
+  }
+  66% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@-webkit-keyframes moving-c {
+  0% {
+    opacity: 0.7;
+  }
+  33% {
+    opacity: 0.4;
+  }
+  66% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes moving-c {
+  0% {
+    opacity: 0.7;
+  }
+  33% {
+    opacity: 0.4;
+  }
+  66% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 main {
   width: 90vw;
   height: 100vh;
@@ -14,7 +134,6 @@ main > #box {
   width: 500px;
   height: 500px;
   position: absolute;
-  opacity: 0.5;
 }
 
 main > #box:nth-child(1) {
@@ -23,6 +142,8 @@ main > #box:nth-child(1) {
   left: 10%;
   right: inherit;
   background-color: palevioletred;
+  -webkit-animation: 1s moving infinite;
+          animation: 1s moving infinite;
 }
 
 main > #box:nth-child(2) {
@@ -31,6 +152,8 @@ main > #box:nth-child(2) {
   left: inherit;
   right: 10%;
   background-color: paleturquoise;
+  -webkit-animation: 1s moving-b infinite;
+          animation: 1s moving-b infinite;
 }
 
 main > #box:nth-child(3) {
@@ -39,6 +162,8 @@ main > #box:nth-child(3) {
   left: 0;
   right: inherit;
   background-color: palegoldenrod;
+  -webkit-animation: 1s moving-a infinite;
+          animation: 1s moving-a infinite;
 }
 
 main > #box:nth-child(4) {
@@ -47,5 +172,7 @@ main > #box:nth-child(4) {
   left: inherit;
   right: 0;
   background-color: palegreen;
+  -webkit-animation: 1s moving-c infinite;
+          animation: 1s moving-c infinite;
 }
 /*# sourceMappingURL=20220414.css.map */
