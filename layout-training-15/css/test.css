@@ -1,0 +1,26 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+}
+
+#root div {
+  background-color: rebeccapurple;
+}
+
+#root div div {
+  background-color: chartreuse;
+}
+
+#root div div div {
+  background-color: goldenrod;
+}
+
+#root div div div div {
+  background-color: aqua;
+}
+
+#root div div div div div {
+  background-color: olive;
+}
+/*# sourceMappingURL=test.css.map */

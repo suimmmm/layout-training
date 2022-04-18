@@ -1,0 +1,21 @@
+#root{
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    
+    div{
+        background-color: rebeccapurple;
+        div{
+            background-color: chartreuse;
+            div{
+                background-color: goldenrod;
+                div{
+                    background-color: aqua;
+                    div{
+                        background-color: olive;
+                    }
+                }
+            }
+        }
+    }
+}
