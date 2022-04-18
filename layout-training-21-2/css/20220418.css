@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#top-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px;
+  background-color: rgba(204, 204, 204, 0.5);
+}
+
+#top-box #left i {
+  line-height: 50px;
+  width: 50px;
+  text-align: center;
+}
+
+#top-box #menu-box {
+  margin: 0 50px;
+  color: #333;
+}
+
+#top-box #menu-box #main ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+}
+
+#top-box #menu-box #main ul li {
+  padding: 10px;
+}
+
+#top-box #menu-box #sub {
+  visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+  background-color: #888;
+}
+
+#top-box #menu-box #sub ul {
+  padding: 10px;
+}
+
+#mid-box {
+  background-image: url("/img/maidens-tower-g6b8369f7e_1920.jpg");
+  background-size: 100vw 100%;
+  width: 100vw;
+  height: 70%;
+  background-color: #888;
+}
+
+#bot-box {
+  width: 100vw;
+  background-color: #333;
+  height: 30%;
+}
+
+#bot-box #top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 70%;
+}
+
+#bot-box #top #img-box {
+  background-image: url("/img/mobile-phone-g03b893b27_1280.jpg");
+  width: 300px;
+  height: 300px;
+}
+
+#bot-box #top #txt-box {
+  width: 70%;
+  height: 70%;
+}
+
+#bot-box > p {
+  font-size: 11px;
+  text-align: center;
+}

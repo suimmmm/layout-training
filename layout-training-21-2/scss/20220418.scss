@@ -1,0 +1,106 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+main{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+// top-box
+#top-box{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
+  background-color: rgba($color: #ccc, $alpha: 0.5);
+
+  #left{
+
+    i{
+      line-height: 50px;
+      width: 50px;
+      text-align: center;
+    }
+  }
+  #menu-box{
+    margin: 0 50px;
+    color: #333;
+    #main{
+      
+      ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px;
+
+        li{
+          padding: 10px;
+        }
+      }
+    }
+
+    #sub{
+      visibility: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px;
+      background-color: #888;
+
+      ul{
+        padding: 10px;
+      }
+    }
+  }
+}
+
+// mid-box
+#mid-box{
+  background-image: url('/img/maidens-tower-g6b8369f7e_1920.jpg');
+  background-size: 100vw 100%;
+  width: 100vw;
+  height: 70%;
+  background-color: #888;
+
+
+}
+
+// bot-box
+#bot-box{
+  width: 100vw;
+  background-color: #333;
+  height: 30%;
+  
+  #top{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 70%;
+
+    
+    #img-box{
+      background-image: url('/img/mobile-phone-g03b893b27_1280.jpg');
+      width: 300px;
+      height: 300px;
+    }
+    #txt-box{
+      width: 70%;
+      height: 70%;
+    }
+  }
+  >p{
+    font-size: 11px;
+    text-align: center;
+  }
+}

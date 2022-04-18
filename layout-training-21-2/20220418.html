@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/20220418.css">
+  <script src="https://kit.fontawesome.com/d00def0550.js" crossorigin="anonymous"></script>
+  <title>layout-training</title>
+</head>
+<body>
+  <main>
+    <div id="top-box">
+      <div id="left">
+        <i class="fa-solid fa-book fa-2x"></i>
+      </div>
+      <div id="menu-box">
+        <nav id="main">
+          <ul>
+            <li>menu</li>
+            <li>menu</li>
+            <li>menu</li>
+            <li>menu</li>
+          </ul>
+        </nav>
+        <nav id="sub">
+          <ul>
+            <li>item-1</li>
+            <li>item-2</li>
+            <li>item-3</li>
+          </ul>
+          <ul>
+            <li>item-1</li>
+            <li>item-2</li>
+            <li>item-3</li>
+          </ul>
+          <ul>
+            <li>item-1</li>
+            <li>item-2</li>
+            <li>item-3</li>
+          </ul>
+          <ul>
+            <li>item-1</li>
+            <li>item-2</li>
+            <li>item-3</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div id="mid-box">
+
+    </div>
+    <div id="bot-box">
+      <div id="top">
+        <div id="img-box"></div>
+        <div id="txt-box">
+          <h3>Maintitle</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, laboriosam tempora? Nam iste sapiente, a veritatis eaque, quia architecto laborum debitis enim magni, quasi molestiae ullam ut! Deleniti, nam quo!</p>
+        </div>
+      </div>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat molestias odit laboriosam tempora explicabo animi, pariatur eligendi. Deleniti, quo voluptatem eos error excepturi ipsam beatae maiores, vero praesentium maxime at.</p>
+    </div>
+  </main>
+
+  <script>
+    let mainMenu = document.getElementById('main');
+    let subMenu = document.getElementById('sub');
+    let subMenuVisible = window.getComputedStyle(subMenu).visibility;
+
+    console.log(subMenuVisible);
+    mainMenu.addEventListener('click', event => {
+      console.log(subMenuVisible);
+      if(subMenuVisible == "visible"){
+        subMenuVisible = "hidden";
+        subMenu.style.visibility = "hidden";
+        console.log(subMenuVisible);
+      }
+      else if(subMenuVisible == "hidden"){
+        subMenu.style.visibility = "visible";
+        subMenuVisible = "visible";
+        console.log(subMenuVisible);
+      } 
+    });
+  </script>
+</body>
+</html>
