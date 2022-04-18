@@ -1,10 +1,143 @@
 *{margin: 0;padding: 0;}
+ul, li, h2{
+  font-weight: inherit;
+  list-style: none;
+  text-decoration: none;
+}
+:root{
+  --color-a:mediumslateblue;
+  --color-b:mediumpurple;
+  --color-c:blueviolet;
+  --color-d:darkmagenta;
+}
+
+@mixin flex($jus,$align) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $align;
+}
+@mixin wei-hei($wei,$hei) {
+  width: $wei;
+  height: $hei;
+}
 
 main{
-  width: 100vw;
-  height: 100vh;
+  @include wei-hei(100vw, fit-content);
 
-  #top-bar{
-    border: 1px solid;
+  >div{
+  @include wei-hei(100%, fit-content);
+  }
+}
+#top-bar{
+  @include wei-hei(100%, 100px);
+  @include flex(space-between, flex-start);
+  background-color: var(--color-b);
+  z-index: 10;
+
+  #left{
+  @include wei-hei(200px, 80px);
+    margin: 10px;
+    background-color: var(--color-a);
+  }
+
+  #menu-box{
+    margin: 10px;
+    z-index: 10;
+    >ul{
+      padding: 10px;
+      @include flex(space-between, center);
+      background-color: var(--color-d);
+      >li{
+        @include wei-hei(100px, fit-content);
+        line-height: 40px;
+        text-align: center;
+        background-color: var(--color-a);
+      }
+    }
+  }
+}
+
+#mid-box{
+  background-color: var(--color-c);
+  @include wei-hei(100%, 300px);
+  position: relative;
+  z-index: 1;
+
+  #box{
+    position: absolute;
+    @include wei-hei(50%, 200px);
+  }
+  #box:nth-child(1){
+    background-color: var(--color-a);
+    top: 10%;
+    left: 10%;
+    z-index: -1;
+  }
+  #box:nth-child(2){
+    background-color: var(--color-b);
+    top: 15%;
+    left: 15%;
+    z-index: -2;
+  }
+  #box:nth-child(3){
+    background-color: var(--color-d);
+    top: 20%;
+    left: 20%;
+    z-index: -3;
+  }
+}
+
+#list-box{
+  @include flex(space-around, center);
+  background-color: var(--color-b);
+  padding: 10px 0;
+
+  article{
+    background-color: var(--color-a);
+    @include wei-hei(30%, 200px);
+    position: relative;
+
+    #box{
+      position: absolute;
+      @include wei-hei(80%, 150px);
+      background-color: var(--color-c);
+
+      div{
+        background-color: var(--color-a);
+        margin: 10px auto;
+      }
+      #top{
+        @include wei-hei(90%, 40px);
+      }
+      #mid{
+        @include wei-hei(90%, 80px);
+      }
+    }
+    #box:nth-child(1){
+      top: 10%;
+      left: 10px;
+      z-index: 1;
+    }
+    #box:nth-child(2){
+      top: 20%;
+      right: 10px;
+      z-index: 2;
+    }
+
+    #box:nth-child(1):hover{
+      z-index: 3;
+    }
+  }
+}
+
+footer{
+  width: 100%;
+  @include flex(space-around, center);
+  background-color: var(--color-c);
+  padding: 10px 0;
+
+  article{
+    @include wei-hei(30%, 100px);
+    background-color: var(--color-a);
   }
 }
