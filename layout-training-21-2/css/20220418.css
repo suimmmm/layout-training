@@ -84,6 +84,85 @@ main {
   width: 100vw;
   height: 70%;
   background-color: #888;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#mid-box #left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ccc;
+}
+
+#mid-box #left #line {
+  height: 400px;
+  width: 1px;
+  border-right: 1px solid;
+}
+
+#mid-box #left #cir {
+  width: 10px;
+  height: 10px;
+  background-color: #999;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+#mid-box #right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+}
+
+#mid-box #right #box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: 400px;
+}
+
+#mid-box #right #box div {
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+
+#mid-box #right #box #main {
+  width: 50%;
+  height: 400px;
+  background-color: #333;
+  opacity: 0.7;
+}
+
+#mid-box #right #box #sub {
+  width: 20%;
+  height: 400px;
 }
 
 #bot-box {
@@ -104,18 +183,30 @@ main {
   height: 70%;
 }
 
+#bot-box #top #box {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 #bot-box #top #img-box {
   background-image: url("/img/mobile-phone-g03b893b27_1280.jpg");
+  background-size: 100% 100%;
   width: 300px;
   height: 300px;
 }
 
 #bot-box #top #txt-box {
-  width: 70%;
+  width: 60%;
   height: 70%;
 }
 
 #bot-box > p {
   font-size: 11px;
   text-align: center;
+  margin: 20px 0;
 }
