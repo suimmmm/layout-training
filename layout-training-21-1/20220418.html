@@ -11,7 +11,43 @@
   <main>
     <div id="top-bar">
       <div id="left"></div>
-      <nav id="menu-box">
+      <!-- 메뉴 부분이 제일 헷갈린다 
+      지금은 이것들을 위아래 한줄로 묶었지만 sub메뉴를 만든다면
+      (nav#main>ul>li*4{menu})+nav#sub>(ul>li*3{item-$})*4 붙잡고 시작 -->
+      
+      <div id="menu-box">
+        <nav id="main">
+          <ul>
+            <li>menu</li>
+            <li>menu</li>
+            <li>menu</li>
+            <li>menu</li>
+          </ul>
+        </nav>
+        <nav id="sub">
+          <ul>
+            <li>item-1</li>
+            <li>item-2</li>
+            <li>item-3</li>
+          </ul>
+          <ul>
+            <li>item-1</li>
+            <li>item-2</li>
+            <li>item-3</li>
+          </ul>
+          <ul>
+            <li>item-1</li>
+            <li>item-2</li>
+            <li>item-3</li>
+          </ul>
+          <ul>
+            <li>item-1</li>
+            <li>item-2</li>
+            <li>item-3</li>
+          </ul>
+        </nav>
+      </div>
+      <!-- <nav id="menu-box">
         <ul>
           <li>
             <h2>MENU</h2>
@@ -38,7 +74,7 @@
             <h2>item-3</h2>
           </li>
         </ul>
-      </nav>
+      </nav> -->
     </div>
     <div id="mid-box">
       <div id="box"></div>

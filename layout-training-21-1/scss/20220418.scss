@@ -29,32 +29,63 @@ main{
   }
 }
 #top-bar{
-  @include wei-hei(100%, 100px);
+  @include wei-hei(100%, 80px);
   @include flex(space-between, flex-start);
   background-color: var(--color-b);
   z-index: 10;
 
   #left{
-  @include wei-hei(200px, 80px);
+  @include wei-hei(200px, 60px);
     margin: 10px;
     background-color: var(--color-a);
   }
 
+  // #menu-box{
+  //   margin: 10px;
+  //   z-index: 10;
+  //   >ul{
+  //     padding: 10px;
+  //     @include flex(space-between, center);
+  //     background-color: var(--color-d);
+  //     >li{
+  //       @include wei-hei(100px, fit-content);
+  //       line-height: 40px;
+  //       text-align: center;
+  //       background-color: var(--color-a);
+  //     }
+  //   }
+  // }
   #menu-box{
-    margin: 10px;
     z-index: 10;
-    >ul{
-      padding: 10px;
-      @include flex(space-between, center);
-      background-color: var(--color-d);
-      >li{
-        @include wei-hei(100px, fit-content);
-        line-height: 40px;
-        text-align: center;
+    width: 50%;
+    margin: 10px 30px;
+    background-color: var(--color-d);
+    #main{
+      
+      ul{
+        @include flex(space-between, center);
+        margin: 10px;
         background-color: var(--color-a);
+
+        li{
+          padding: 10px;
+        }
+      }
+    }
+
+    #sub{
+      @include flex(space-between, center);
+      margin: 10px;
+      background-color: var(--color-a);
+
+      ul{
+        li{
+          padding: 10px;
+        }
       }
     }
   }
+
 }
 
 #mid-box{
