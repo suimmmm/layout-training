@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/20220419.css">
+  <title>layout-training</title>
+</head>
+<body>
+  <div id="root">
+    <div id="abso-box">
+      <div id="box">
+        <div id="cir"></div>
+        <div id="cir-border"></div>
+        <div id="list">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <div id="card-box">
+      <div id="card">
+        <h1>Don't<br>Dwell<br>On<br>The<br>Past</h1>
+      </div>
+      <div id="card">
+        <h1>Seize<br>The<br>Day</h1>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const boxHight = document.getElementById('box');
+    const cardBox = document.querySelector('cardBox');
+    let i = 500;
+    let j=0;
+
+    document.addEventListener('wheel', event=>{
+      // 휠 올릴때
+      if(event.deltaY>0){
+        j += 1;
+        // console.log(j);
+        // console.log(event.deltaY);
+        
+        // 휠 변수 크기 조정
+        if(j>5){
+          boxHight.style.height = '0px';
+        }
+        else if(j<0){
+          boxHight.style.height = i;
+        }
+        else{
+          boxHight.style.height = i - event.deltaY * j + "px";
+        }
+      }
+      // 휠 내릴때
+      else if(event.deltaY<0){
+        j -= 1;
+        // console.log(j);
+        // console.log(event.deltaY);
+
+        // 휠 변수 크기 조정
+        if(j>5){
+          boxHight.style.height = '0px';
+        }
+        else if(j<0){
+          boxHight.style.height = i;
+        }
+        else{
+          boxHight.style.height = i + event.deltaY * j + "px";
+        }
+      }
+    });
+    /* 마우스 휠의 조건을 줘서 이벤트를 주었다. 자연스럽게 움직임
+    이것말고도 있는지 궁금*/
+
+  </script>
+</body>
+</html>

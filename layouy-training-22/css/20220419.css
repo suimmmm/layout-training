@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+#abso-box {
+  position: inherit;
+  top: 0;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+#box {
+  width: 100vw;
+  position: relative;
+  margin: 0 auto;
+  height: 500px;
+}
+
+#box > div {
+  border-radius: 50%;
+  position: absolute;
+}
+
+#box #cir {
+  width: 300px;
+  height: 300px;
+  background-color: #ff9494;
+  position: absolute;
+  -webkit-transform: translateY(20%);
+          transform: translateY(20%);
+  top: 0;
+  left: 20%;
+}
+
+#box #cir-border {
+  border: 10px solid #ebeb51;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  right: 10%;
+}
+
+#box #list {
+  margin-left: 20px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100px;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+#box #list div {
+  width: 30px;
+  height: 30px;
+  background-color: #777;
+  margin: 10px auto;
+  border-radius: 50%;
+}
+
+#card-box {
+  width: 90%;
+  margin: 10px auto;
+}
+
+#card-box #card {
+  width: 100%;
+  border-radius: 30px;
+  -webkit-backdrop-filter: blur(50px) brightness(0.9);
+          backdrop-filter: blur(50px) brightness(0.9);
+  margin: 10px auto;
+  margin-bottom: 0;
+  font-size: 2rem;
+  line-height: 80px;
+}
+
+#card-box #card h1 {
+  width: 90%;
+  margin: 0 auto;
+  color: #ddd;
+  padding: 10px;
+}
