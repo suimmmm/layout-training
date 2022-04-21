@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kite+One&display=swap" rel="stylesheet">
+  <title>layout-training</title>
+  <style>
+    *{margin: 0;padding: 0;font-family: 'Kite One', sans-serif;font-size: 1rem;}
+    main{
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    div{
+      width: 80%;
+      margin: 0 auto;
+      color: #888;
+    }
+    #box-b> h1{
+      display: inline-block;
+      color: #333;
+    }
+    #box-b > p{
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div id="box-a">
+      <p>If you cannot fly then run.</p>
+      <p>If you cannot run, then walk.</p>
+      <p>And, if you cannot walk, then crawl,</p>
+    </div>
+    <div id="box-b">
+      <h1>but whatever you do,</h1>
+      <p> you have to keep moving forward.</p>
+    </div>
+  </main>
+</body>
+</html>
