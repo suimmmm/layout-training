@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-training</title>
+  <style>
+    #root{
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="cir"></div>
+  </div>
+
+  <script>
+    document.body.style.margin ='0';
+    document.body.style.padding ='0';
+
+    // 아래 문장은 대부분 어떨때 쓰는 지 
+    document.getElementById('root').setAttribute('style','display:flex;justify-content:center;align-items:center;height:100vh;width:100vw;');
+    document.getElementById('cir').setAttribute('style', 'border-radius:50%;width:100px;height:100px;background-color:#555;');
+
+    document.getElementById('root').style.backgroundColor = '#ccc';
+  </script>
+</body>
+</html>
