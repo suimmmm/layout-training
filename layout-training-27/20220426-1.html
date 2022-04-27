@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-training</title>
+  <style>
+    .main{
+      grid-row: 1/3;
+      grid-column: 1/3;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="txt-box">
+      <h1>Lorem, ipsum.</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere repellendus ea vel, odit explicabo, voluptate earum quo, quae nesciunt excepturi sequi? Eveniet dolor quas eligendi possimus sequi corporis. Voluptas tempore voluptates voluptatem beatae dolorem dolores, consequuntur id minima quas omnis quibusdam ab excepturi nobis error nemo dolorum fugiat ratione? Doloremque ea assumenda minima rem, a molestias consequuntur. Mollitia, ad. Molestias a vero minus rem! Pariatur accusamus dolor excepturi aliquam aperiam quae dicta non saepe commodi ab? Beatae, repudiandae facere ex quidem atque veritatis ad iusto quam et ut iure quisquam? Repellendus vitae ex ab fugiat sequi dolores velit culpa nisi!</p>
+    </div>
+    <div id="thum" class="1">1</div>
+    <div id="thum" class="2">2</div>
+    <div id="thum" class="3">3</div>
+    <div id="thum" class="4">4</div>
+  </div>
+
+  <script>
+    document.body.style.margin = '0';document.body.style.padding = '0';
+    const root =  document.getElementById('root');
+    let color = 'rgb(255, 85, 85)';
+    const txtBox = document.getElementById('txt-box');
+    const thum = document.querySelectorAll('#thum');
+    console.dir(thum);
+    root.setAttribute('style','width:100vw;height:100vh;display: grid;grid-template-columns: repeat(4,1fr);grid-row: repeat(2,1fr);grid-auto-rows: minmax(100px, auto);grid-auto-flow: dense;')
+    txtBox.style.gridColumn = '1/5';
+    txtBox.style.color = color;
+
+    for(let i of thum){
+      i.style.backgroundColor = color;
+      i.style.margin = '10px';
+      i.style.gridRow = '2/3';
+    }
+
+    root.addEventListener('click',event =>{
+      txtBox.style.gridColumn = '2/5';
+
+      console.log(thum[event.target.classList.value]);
+      thum[event.target.classList.value].style.gridColumn = '1/3';
+      thum[event.target.classList.value].style.gridRow = '1/3';
+    })
+  </script>
+</body>
+</html>
