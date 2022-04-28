@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-training</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById('root');
+    const divone = document.createElement('div');
+    const divtwo = document.createElement('div');
+    divone.textContent = 'A';
+    divtwo.textContent = 'B';
+
+    root.appendChild(divone);
+    root.appendChild(divtwo);
+
+    function size(a,w,h){
+      a.style.width = w;
+      a.style.height = h;
+    }
+    size(root,'80vw','80vh');
+    size(divone,'500px','500px');
+    size(divtwo,'500px','500px');
+
+    divone.style.backgroundColor = '#87ceed';
+    divtwo.style.backgroundColor = '#ff5555';
+
+    function position(a,p,t,l,b,r){
+      a.style.position = p;
+      a.style.top = t;
+      a.style.left = l;
+      a.style.bottom = b;
+      a.style.right = r;
+    }
+    position(root,'relative','0','0','auto','auto');
+    position(divone,'absolute','10%','10%','auto','auto');
+    position(divtwo,'absolute','auto','auto','10%','10%');
+
+    let zIndexOne = 1;
+    let zIndexTwo = -1;
+    divone.style.zIndex = zIndexOne;
+    divtwo.style.zIndex = zIndexTwo;
+    let oneZIndex = window.getComputedStyle(divone).zIndex;
+    let twoZIndex = window.getComputedStyle(divtwo).zIndex;
+    // console.log(oneZIndex,twoZIndex);
+    divone.addEventListener('click',function(){
+      oneZIndex = zIndexTwo;
+      twoZIndex = zIndexOne;
+      divone.style.zIndex = zIndexTwo;
+      divtwo.style.zIndex = zIndexOne;
+      // console.log(oneZIndex,twoZIndex);
+    })
+    divtwo.addEventListener('click',function(){
+      oneZIndex = zIndexOne;
+      twoZIndex = zIndexTwo;
+      divone.style.zIndex = zIndexOne;
+      divtwo.style.zIndex = zIndexTwo;
+      // console.log(oneZIndex,twoZIndex);
+    })
+    // 말씀하신거 반대로 이벤트를 적용시켰습니다.
+
+    // 말씀주신대로 divone에 event를 주면 콘솔도 안찍혔습니다. 
+  </script>
+</body>
+</html>
