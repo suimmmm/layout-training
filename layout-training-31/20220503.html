@@ -5,37 +5,45 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>layout-training</title>
-  <style>
-    *{margin: 0;padding: 0;}
-    #root{
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-    #txt-box{
-      display: flex;
-      font-size: 50px;
-    }
-    #txt-box > p{
-      transform: rotate(180deg) translateY(-5px);
-    }
-    #box{
-      width: 100vw;
-      height: 50px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(10px);
-      background-color: #fff;
-    }
-  </style>
 </head>
 <body>
   <div id="root">
     <div id="txt-box">WH<p>A</p>TEVERY&<p>U</p>W<p>A</p>NT</div>
     <div id="box"></div>
   </div>
+
+  <script>
+    const root = document.getElementById('root');
+    const txtBox = root.children[0];
+    const box = root.children[1];
+
+    document.body.style.margin = 0;
+    document.body.style.padding = 0;
+
+    function size(i,width, height ){
+      i.style.width = width;
+      i.style.height = height;
+    }
+    size(root,'100vw','100vh');
+    size(box,'100vw','50px');
+
+    function flex(i,justify, align){
+      i.style.display = 'flex';
+      i.style.justifyContent = justify;
+      i.style.alignItems = align;
+    }
+    flex(root,'center','center');
+    flex(txtBox,'inherit','inherit');
+
+    root.style.position = 'relative';
+    txtBox.style.fontSize = '50px';
+    for(let l of txtBox.children){
+      l.style.transform ='rotate(180deg) translateY(-5px)';
+    }
+    box.style.position = 'absolute';
+    box.style.top = '50%';
+    box.style.transform = 'translateY(10px)';
+    box.style.backgroundColor = '#fff';
+  </script>
 </body>
 </html>
