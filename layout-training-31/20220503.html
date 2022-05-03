@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-training</title>
+  <style>
+    *{margin: 0;padding: 0;}
+    #root{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    #txt-box{
+      display: flex;
+      font-size: 50px;
+    }
+    #txt-box > p{
+      transform: rotate(180deg) translateY(-5px);
+    }
+    #box{
+      width: 100vw;
+      height: 50px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(10px);
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="txt-box">WH<p>A</p>TEVERY&<p>U</p>W<p>A</p>NT</div>
+    <div id="box"></div>
+  </div>
+</body>
+</html>
