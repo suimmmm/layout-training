@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+  <title>layout-training</title>
+  <style>
+    *{margin: 0;padding: 0;text-decoration: none;list-style: none;}
+    #root{
+      overflow: hidden;
+    }
+    #root > div{
+      color: #eee;
+    }
+    #menu-box{
+      background-color: #ccc;
+    }
+    #box-a{
+      background-color: #999;
+    }
+    #box-b{
+      background-color: #777;
+    }
+    #box-c{
+      background-color: #555;
+    }
+    #pos-abso-b > #shape-box > #shape{
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <me id="menu-box">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </me>
+    <div id="box-a">
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, aperiam fugit aut fuga iure, explicabo sequi, odit accusamus recusandae vero perspiciatis mollitia dolor ullam eveniet pariatur sit nostrum blanditiis laudantium ea rem vel minus! Molestias optio repellat molestiae harum architecto? Consequatur ad perferendis harum fuga numquam quaerat, porro labore nam, itaque ipsam reprehenderit mollitia id ipsum et eos cum fugiat debitis! Ex voluptate doloribus in exercitationem aperiam! Libero numquam ducimus deleniti at aliquam consequuntur magnam, laboriosam eligendi aspernatur nisi saepe facere ipsum fugit! Veritatis quas ab error modi reiciendis quam dolores nesciunt porro, eaque repellendus molestias dolorum earum delectus sunt.</p>
+    </div>
+    <div id="box-b">
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis quia suscipit non consectetur officiis necessitatibus, adipisci a quos nesciunt labore qui est cupiditate accusantium incidunt expedita sit dicta laborum error in ut quod obcaecati dolorem natus velit. Nobis cupiditate laboriosam illum sed magnam odit illo officia nulla, maiores iure dicta vitae dolorem eaque sit quod accusantium nostrum itaque ad? Quasi doloremque ipsa quo, dolores libero sunt, dignissimos totam illo facere cupiditate eligendi porro repellat minima? Illum porro quaerat itaque cum, totam laudantium nobis libero iusto ex? Animi, dignissimos molestiae! Ut, impedit eius? Ex officia, mollitia asperiores animi id tempore soluta.</p>
+    </div>
+    <div id="box-c">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse accusantium officiis maxime, molestiae aspernatur quisquam a. Quae, similique saepe. Culpa nesciunt in libero quisquam deleniti adipisci, sed suscipit ab odio aliquam distinctio saepe consequuntur ipsum laborum sapiente obcaecati mollitia cupiditate. At, perferendis? Similique sapiente dolore expedita nobis beatae, deleniti voluptatem molestias atque sit magnam non, soluta omnis. Placeat nihil earum atque exercitationem rerum porro natus laudantium molestias inventore ducimus iusto, nobis, necessitatibus nemo voluptatem sint officiis ratione veritatis cupiditate consequatur magnam commodi. Ducimus labore reiciendis enim aperiam consequuntur dolorem quibusdam ex corrupti nihil incidunt! Dicta, in eaque. Rem, quod minima.</p>
+    </div>
+
+    <div id="pos-abso-box" style="z-index:2;">
+      <h1>BIGFONT</h1>
+    </div>
+    <div id="pos-abso-b">
+      <div id="shape-box">
+        <div id="shape"></div>
+        <div id="shape-blur"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const root = document.getElementById('root');
+    const menuBox = root.children[0];
+    const boxA = root.children[1];
+    const boxB = root.children[2];
+    const boxC = root.children[3];
+    const posAbsoBox = root.children[4];
+    const posAbsoB = root.children[5];
+    const shape = posAbsoB.children[0].children[0];
+    const shapeBlur = posAbsoB.children[0].children[1];
+
+    function size(i, wid, hei){
+      i.style.width = wid;
+      i.style.height = hei;
+    }
+    function flex(i, jus, align){
+      i.style.display = 'flex';
+      i.style.justifyContent = jus;
+      i.style.alignItems = align;
+    }
+
+    size(root, '100vw','100vh');
+    size(menuBox, '10%','100%');
+    size(boxA, '20%','100%');
+    size(boxB, '30%','100%');
+    size(boxC, '40%','100%');
+    size(posAbsoB, '100vw','100vh');
+    size(posAbsoBox, '100vw','100vh');
+    size(shape, '750px','500px');
+    size(shapeBlur, '750px','500px');
+
+    flex(root, 'inherit','inherit');
+    for(let l of root.children){
+      flex(l, 'center','center');
+      l.style.flexDirection = 'column';
+      l.style.padding = '10px 0';
+    }
+    menuBox.style.justifyContent = 'flex-start';
+    boxA.style.justifyContent = 'flex-start';
+    boxB.style.justifyContent = 'flex-end';
+
+    for(let li of menuBox.children){
+      size(li, '100px','100px');
+      li.style.backgroundColor = '#555';
+      li.style.margin = '10px 0';
+    }
+
+    function posRela(i){
+      i.style.position = 'relative';
+    }
+    function posAbso(i){
+      i.style.position = 'absolute';
+    }
+    
+    posRela(root);
+    posRela(posAbsoB.children[0]);
+    posAbso(posAbsoB);
+    posAbso(posAbsoBox);
+    posAbso(shapeBlur);
+
+    
+    function font(i){
+      i.style.fontFamily = "'Monoton', cursive";
+      i.style.fontSize = "8rem";
+      i.style.fontWeight = "200";
+    }
+    font(posAbsoBox.children[0]);
+    
+    function border(i){
+      i.style.borderTopLeftRadius = '50%';
+      i.style.borderTopRightRadius = '40%';
+      i.style.borderBottomLeftRadius = '20%';
+      i.style.borderBottomRightRadius = '30%';
+      i.style.opacity = '0.8';
+    }
+    border(shape);
+    border(shapeBlur);
+    shape.style.transform = 'rotate(35deg) translateY(-20px)';
+    shapeBlur.style.transform = 'rotate(35deg) translate(50px,150px)';
+    shapeBlur.style.boxShadow = '-300px -500px 20px rgba(50,50,50,0.7)';
+  </script>
+</body>
+</html>
