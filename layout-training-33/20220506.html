@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-training</title>
+  <script src="https://kit.fontawesome.com/d00def0550.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  #root{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #box-a{
+    width: 500px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  #box-a > p{
+    width: 500px;
+  }
+  
+  button{
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    align-self: flex-end;
+  }
+
+  #box-b{
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    border-radius: 30px;
+    transform: translate(-150px, -150px);
+    border: 1px solid #ddd;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  #box-b > #close{
+    width: 90%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center !important;
+  }
+  #box-b > h1{
+    width: 90%;
+    font-size: 5rem;
+    font-weight: 300;
+    line-height: 4rem;
+  }
+  #box-b > p{
+    width: 90%;
+  }
+  #box-b > #btn-box{
+    width: 90%;
+
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #box-c{
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    border-radius: 30px;
+    transform: translate(-100px,-100px);
+    z-index: 2;
+    background-color: rgba(100, 100, 100, 0.3);
+    backdrop-filter: blur(3px);
+    box-shadow: 0px 0px 30px rgba(100, 100, 100, 0.3);
+  }
+</style>
+<body>
+  <div id="root">
+    <div id="box-a">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quidem delectus eum repudiandae ipsam libero iure quo magnam ex impedit unde maiores, id necessitatibus tenetur! Adipisci voluptatibus excepturi illum nisi ratione quod dolores consequatur laboriosam dolore, assumenda qui cumque ipsa velit eius deleniti quia incidunt quaerat ducimus. Sint minima possimus non saepe laboriosam omnis debitis a rem illum amet culpa recusandae minus aut at, officia doloribus sapiente quam pariatur voluptatibus iste est. Atque minus amet cupiditate consequuntur eos, tempore, corporis molestias iure sit possimus hic incidunt quisquam reiciendis dolore enim? Asperiores molestiae ut natus, atque illo suscipit quaerat odit facilis?</p>
+      <button id="open-box">open</button>
+    </div>
+    <div id="box-b">
+      <div id="close">
+        <i class="fa-solid fa-xmark fa-2x"></i>
+      </div>
+      <h1>LOREM IPSUM</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam quam odit eum adipisci inventore, temporibus voluptatum expedita veniam? Distinctio corrupti ullam accusantium quo voluptatum facilis voluptatibus voluptates sit asperiores ipsa?</p>
+      <div id="btn-box">
+        <button id="close-box">close</button>
+      </div>
+    </div>
+    <div id="box-c"></div>
+  </div>
+  <script>
+    const closeBox = document.getElementById('close-box');
+    const openBox = document.getElementById('open-box');
+    const close = document.querySelector('#close > i')
+    const boxB = document.getElementById('box-b');
+    const boxC = document.getElementById('box-c');
+
+    close.addEventListener('click', ()=>{
+      boxB.style.display = 'none';
+      boxC.style.display = 'none';
+    })
+    closeBox.addEventListener('click', ()=>{
+      boxB.style.display = 'none';
+      boxC.style.display = 'none';
+    })
+    openBox.addEventListener('click', ()=>{
+      boxB.style.display = 'flex';
+      boxC.style.display = 'block';
+    })
+  </script>
+</body>
+</html>
