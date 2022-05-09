@@ -33,7 +33,8 @@
     container.style.width = '500px';
     container.style.height = '500px';
     container.style.position = 'relative';
-    container.style.border = '1px solid #111'
+    container.style.border = '1px solid #111';
+    container.style.overflow = 'hidden';
 
     for(let i=0; i< items.length; i++){
       container.children[i].style.width = '400px';
@@ -46,10 +47,10 @@
     let one = 1;
     let two = 2;
     container.children[zero].style.left = '-100%';
-    container.children[one].style.left = '0%';
+    container.children[one].style.left = '10%';
     container.children[two].style.left = '100%';
 
-    container.addEventListener('wheel',()=>{
+    let setTime = setInterval(function(){
       zero++;
       one++;
       two++;
@@ -63,9 +64,9 @@
         two = 0;
       }
       container.children[zero].style.left = '-100%';
-      container.children[one].style.left = '0%';
+      container.children[one].style.left = '10%';
       container.children[two].style.left = '100%';
-    })
+    },1000)
   </script>
 </body>
 </html>
