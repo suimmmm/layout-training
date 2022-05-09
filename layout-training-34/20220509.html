@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-training</title>
+  <style>
+    *{margin: 0;padding: 0;}
+    #root{
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #container{
+      width: 500px;
+      height: 500px;
+      border: 1px solid;
+      position: relative;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #item{
+      width: 400px;
+      height: 400px;
+      background-color: #777;
+      border: 1px solid;
+      position: absolute;
+    }
+    #item:nth-child(1){
+      left: -100%;
+    }
+    #item:nth-child(2){
+      left: 0;
+    }
+    #item:nth-child(3){
+      left: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="container">
+      <div id="item"></div>
+      <div id="item"></div>
+      <div id="item"></div>
+    </div>
+  </div>
+</body>
+</html>
