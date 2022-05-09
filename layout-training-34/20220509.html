@@ -5,51 +5,67 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>layout-training</title>
-  <style>
-    *{margin: 0;padding: 0;}
-    #root{
-      width: 100vw;
-      height: 100vh;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    #container{
-      width: 500px;
-      height: 500px;
-      border: 1px solid;
-      position: relative;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    #item{
-      width: 400px;
-      height: 400px;
-      background-color: #777;
-      border: 1px solid;
-      position: absolute;
-    }
-    #item:nth-child(1){
-      left: -100%;
-    }
-    #item:nth-child(2){
-      left: 0;
-    }
-    #item:nth-child(3){
-      left: 100%;
-    }
-  </style>
 </head>
 <body>
   <div id="root">
     <div id="container">
-      <div id="item"></div>
-      <div id="item"></div>
-      <div id="item"></div>
+      <div id="item">1</div>
+      <div id="item">2</div>
+      <div id="item">3</div>
     </div>
   </div>
+
+  <script>
+    const root = document.getElementById('root');
+    const container = root.children[0];
+    const items = document.querySelectorAll('#item');
+
+    function flex(i){
+      i.style.display = 'flex';
+      i.style.justifyContent = 'center';
+      i.style.alignItems = 'center';
+    }
+    flex(root);
+    flex(container);
+
+    root.style.width = '100vw';
+    root.style.height = '100vh';
+    container.style.width = '500px';
+    container.style.height = '500px';
+    container.style.position = 'relative';
+    container.style.border = '1px solid #111'
+
+    for(let i=0; i< items.length; i++){
+      container.children[i].style.width = '400px';
+      container.children[i].style.height = '400px';
+      container.children[i].style.backgroundColor = '#777';
+      container.children[i].style.position = 'absolute';
+    }
+    
+    let zero = 0;
+    let one = 1;
+    let two = 2;
+    container.children[zero].style.left = '-100%';
+    container.children[one].style.left = '0%';
+    container.children[two].style.left = '100%';
+
+    container.addEventListener('wheel',()=>{
+      zero++;
+      one++;
+      two++;
+      if(zero > 2){
+        zero = 0;
+      }
+      if(one > 2){
+        one = 0;
+      }
+      if(two > 2){
+        two = 0;
+      }
+      container.children[zero].style.left = '-100%';
+      container.children[one].style.left = '0%';
+      container.children[two].style.left = '100%';
+    })
+  </script>
 </body>
 </html>
