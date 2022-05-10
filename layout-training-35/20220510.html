@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-training</title>
+  <link rel="stylesheet" href="./20220510.css">
+</head>
+<body>
+  <!-- #root>nav#menu-box>(ul#main>li*4{menu-$})+(ul#sub>li{menu-item-$}*4)*4 -->
+  <div id="root">
+    <nav id="menu-box">
+      <ul id="main">
+        <li class="0">menu-1</li>
+        <li class="1">menu-2</li>
+        <li class="2">menu-3</li>
+        <li class="3">menu-4</li>
+      </ul>
+      <nav id="sub-box">
+        <ul id="sub">
+          <li>menu-item-1</li>
+          <li>menu-item-2</li>
+          <li>menu-item-3</li>
+          <li>menu-item-4</li>
+        </ul>
+        <ul id="sub">
+          <li>menu-item-1</li>
+          <li>menu-item-2</li>
+          <li>menu-item-3</li>
+          <li>menu-item-4</li>
+        </ul>
+        <ul id="sub">
+          <li>menu-item-1</li>
+          <li>menu-item-2</li>
+          <li>menu-item-3</li>
+          <li>menu-item-4</li>
+        </ul>
+        <ul id="sub">
+          <li>menu-item-1</li>
+          <li>menu-item-2</li>
+          <li>menu-item-3</li>
+          <li>menu-item-4</li>
+        </ul>
+      </nav>
+    </nav>
+  </div>
+  <script>
+    const mainUl = document.querySelector('#main');
+    const subBox = document.getElementById('sub-box');
+    let visibleValue = 'visible';
+    mainUl.addEventListener('click',event =>{
+      let className = event.target.classList.value;
+      console.dir(event.target.classList.value);
+      
+      if(subBox.children[className].style.visibility === visibleValue){
+        // console.log(subBox.children[className])
+        subBox.children[className].style.visibility = 'hidden';
+      }
+      else if(subBox.children[className].style.visibility !== visibleValue){
+        // console.log(subBox.children[className])
+        subBox.children[className].style.visibility = visibleValue;
+      }
+    })
+    </script>
+</body>
+</html>
