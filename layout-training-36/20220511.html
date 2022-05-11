@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-training</title>
+  <style>
+    /* 글자겹치기
+    오브제 vs 오브제 
+    새로운 상징을 만들어 낼 수있다. -> 디테일 부분 
+    
+    대비 -> 큰 특징, 효과를 생각
+    */
+    @keyframes lineHieght{
+      0%{ line-height: 15px}
+      50%{ line-height: 40px}
+      100%{line-height: 15px}
+    }
+
+    *{margin: 0;padding: 0;}
+    #root{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #root> div{
+      min-width: fit-content;
+      height: fit-content;
+    }
+    #left{
+      animation-name: lineHieght;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+    }
+    #left > p{
+      letter-spacing: -5px;
+      font-weight: bold;
+      font-size: 3rem;
+      text-align: end;
+      opacity: 0.3;
+    }
+    #right{
+      display: none;
+    }
+    #right > #box{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      font-size: small;
+      line-height: 70px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="left">
+      <p style="color:purple;">function</p>
+      <p style="color:palevioletred;">variable</p>
+      <p style="color:plum;">index</p>
+      <p style="color:violet;">constant</p>
+      <p style="color:slateblue;">object</p>
+      <p style="color:blueviolet;">array</p>
+    </div>
+    <div id="right">
+      <div id="box">
+        <p>The greatest glory in living lies not in never falling, but in rising every time we fall.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const world = document.getElementById('left');
+    const displayRight = document.getElementById('right');
+    let displayValue = window.getComputedStyle(displayRight).display;
+    let animationValue = window.getComputedStyle(world).animationPlayState;
+
+    world.addEventListener('click', e =>{
+      console.log(animationValue)
+      if(animationValue === 'paused'){
+        animationValue = 'running'
+        world.style.animationPlayState = animationValue;
+        displayValue = 'none';
+        displayRight.style.display = displayValue;
+      }
+      else {
+        animationValue = 'paused';
+        world.style.animationPlayState = animationValue;
+        displayValue = 'block';
+        displayRight.style.display = displayValue;
+      }
+    })
+  </script>
+</body>
+</html>
