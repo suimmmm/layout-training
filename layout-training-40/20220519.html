@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-training</title>
+  <style>
+    *{margin: 0;padding: 0;}
+    #root{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    button{
+      width: 50px;
+      height: 50px;
+      font-size: 2rem;
+      margin:0 10px;
+    }
+    #h1box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    h1{
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <button id="btn-left"><</button>
+    <div id="h1box">
+      <h1>1</h1>
+      <h1>2</h1>
+      <h1>3</h1>
+      <h1>4</h1>
+      <h1>5</h1>
+    </div>
+    <button id="btn-right">></button>
+  </div>
+
+  <script>
+    const btnLeft = document.getElementById('btn-left');
+    const btnRight = document.getElementById('btn-right');
+
+    const h1Box = document.querySelectorAll('h1');
+    console.log(h1Box);
+
+    let count = 0;
+    btnLeft.addEventListener('click',()=>{
+      h1Box[count].style.order = '5';
+      count++;
+      if(count === 5){
+        count = 0;
+        for(let i=0; i<h1Box.length; i++){
+          h1Box[i].style.order = 1;
+        }
+      }
+    })
+    btnRight.addEventListener('click',()=>{
+      h1Box[count].style.order = '1';
+      count--;
+      if(count === -1){
+        count = 4;
+        for(let i=0; i<h1Box.length; i++){
+          h1Box[i].style.order = 5;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
