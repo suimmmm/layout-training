@@ -1,0 +1,128 @@
+*{margin: 0;padding: 0;}
+body{
+  overflow: hidden;
+}
+#root{
+  width: 100vw;
+  height: 100vh;
+  padding-bottom: 50px;
+}
+
+#top{
+  width: 100%;
+  height: 50px;
+  background-color: #555;
+}
+#top-box{
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#top-box > #logo-box{
+  width: 100px;
+  height: 50px;
+  background-color: #fff;
+}
+#top-box > #menu-box{
+  width: 50%;
+  height: 400px;
+  background-color: #fff;
+}
+
+#slide-box{
+  width: 100%;
+  height: 500px;
+  background-color: #999;
+  position: relative;
+}
+#slide-box > #slide-item{
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#slide-box > #slide-item > #item{
+  width: 100vw;
+  height: 100%;
+}
+#slide-box > #btn-box{
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+#slide-box > #btn-box > button{
+  width: 50px;
+  height: 50px;
+  font-size: 3rem;
+  background-color: inherit;
+  color: #fff;
+  border: none;
+}
+
+#slide-box > #slide-cir{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+#slide-box > #slide-cir > #cir {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin:10px;
+  background-color: #777;
+}
+
+#item-box{
+  width: 80%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#item-box > #item{
+  width: 30%;
+  height: 300px;
+  background-color: #777;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+}
+#item-box > #item > h4{
+  margin: 10px;
+}
+#item-box > #item > p{
+  margin: 10px;
+}
+
+#fixed-box{
+  width: 70px;
+  height: 70px;
+  background-color: #777;
+  line-height: 70px;
+  text-align: center;
+  color: #fff;
+  position: fixed;
+  bottom: 50px ;
+  right: 50px;
+}
+
+footer{
+  width: 100%;
+  height: 50px;
+  background-color: #555;
+  position: relative;
+  transform: translateY(-200%);
+}
